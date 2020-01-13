@@ -1,0 +1,32 @@
+map<int, int> m;
+int Stairs(int number)
+{
+	if (number <= 0)
+	{
+		return 0;
+	}
+	else if (number == 1 || number == 2)
+	{
+		return number;
+	}
+	else
+	{
+		if (m.find(number - 1) != m.end())
+		{
+
+		}
+		else
+		{
+			m[number - 1] = Stairs(number - 1);
+		}
+		if (m.find(number - 2) != m.end())
+		{
+			
+		}
+		else
+		{
+			m[number - 2] = Stairs(number - 2);
+		}
+		return m[number - 1] + m[number - 2];
+	}
+}
